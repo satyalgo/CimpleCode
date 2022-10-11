@@ -1,0 +1,21 @@
+seleniumhq vs openqa
+====================
+
+1. seleniumhq : group id
+2. openqa : package name
+
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.1.1</version>
+</dependency>
+
+
+a) groupId 		: unique group name to have all similar/related projects across all 			  dependencies
+b) artifactId	: unique project name under a group
+c) version		: to have a different version of project under a certain group
+
+
+
+

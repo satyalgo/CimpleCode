@@ -1,0 +1,7 @@
+Different ways to clear a textbox
+=================================
+
+1. clear() 		: inbuilt method for a WebElement object
+2. backspace() 	: get existing value, get length, use backspace
+3. JavaScript 	: Setting empty value
+

@@ -1,0 +1,26 @@
+XPath Function
+==============
+
+**Avoid using index in xpath**
+
+
+1. position() : to get any html node by an index
+2. count() : to get count of nodes
+
+
+Scenario: To get Currency of a Country
+Input: Afghanistan
+Output: Afghani
+
+https://cosmocode.io/automation-practice-webtable/
+
+//table[@id='countries']//tr//td/*[text()='Afghanistan']/parent::td/parent::tr//td[4]
+
+//table[@id='countries']//tr//td/*[text()='Afghanistan']/parent::td/parent::tr//td[position() = 4]
+
+//table[@id='countries']//tr//td/*[text()='Afghanistan']/parent::td/parent::tr//td[
+position() = count(...)]
+
+//table[@id='countries']//tr//td/*[text()='Afghanistan']/parent::td/parent::tr//td[position() = count(//table[@id='countries']//tr[1]//td//*[text()='Currency']/ancestor::td//preceding-sibling::td) + 1]
+
+

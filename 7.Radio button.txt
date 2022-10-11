@@ -1,0 +1,19 @@
+Radio button
+============
+
+1. How to select a radio button
+	checkbox
+	radio button
+	drodown
+	etc.
+
+	click()
+2. How to check if a radio button is selected
+	isSelected()
+3. How to deselect a radio button
+	checked
+
+
+https://demo.guru99.com/test/radio.html
+
+

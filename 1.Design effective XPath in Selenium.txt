@@ -1,0 +1,37 @@
+Design effective XPath in Selenium
+==================================
+- Functions: text(), contains()...
+- Axes: sibling, parent...
+
+
+How to read web table dynamically?
+----------------------------------
+
+https://www.gsmarena.com/compare.php3?idPhone2=11251&idPhone1=11089&idPhone3=11234
+
+Input: Phone name, Spec name
+Output: Spec content
+
+Steps:
+1. Get Weight spec value for index 2
+	//div[@id='specs-list']//a[text()='Weight']//parent::td//following-sibling::td[2]
+2. Get <generic> spec value for index 2
+	//div[@id='specs-list']//a[text()='Protection']//parent::td//following-sibling::td[3]
+3. Get <generic> spec value for <phone model>
+	//div[@id='specs-list']//a[text()='Protection']//parent::td//following-sibling::td[3]
+
+	//div[@id='specs-list']//a[text()='Protection']//parent::td//following-sibling::td[position()=3]
+
+	//div[@id='specs-list']//a[text()='Protection']//parent::td//following-sibling::td[position()=count()]
+
+	Phone name -> Column Index
+	position, count
+
+	//div[contains(@class,'compare-candidate')]//*[@data-spec='modelname' and text()='Samsung Galaxy S22 Ultra 5G']//ancestor::div[contains(@class,'compare-candidate')]//preceding-sibling::div[contains(@class,'compare-candidate')]
+
+	//div[@id='specs-list']//a[text()='Protection']//parent::td//following-sibling::td[position()=count(//div[contains(@class,'compare-candidate')]//*[@data-spec='modelname' and text()='Samsung Galaxy S22 Ultra 5G']//ancestor::div[contains(@class,'compare-candidate')]//preceding-sibling::div[contains(@class,'compare-candidate')])+1]
+
+
+
+
+

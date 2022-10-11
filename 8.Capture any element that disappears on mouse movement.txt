@@ -1,0 +1,11 @@
+Capture any element that disappears on mouse movement (ex: tooptip)
+===================================================================
+
+1. Inspect(f12) -> Console -> setTimeout(function() {debugger;}, 3000); 
+-> Mouse hover -> Wait until paused -> Elements
+
+2. Inspect(f12) -> Sources -> Mouse hover -> f8 -> Elements
+
+
+https://docs.anychart.com/Common_Settings/Tooltip
+

@@ -1,0 +1,59 @@
+XPath Axis
+==========
+
+following : from current node as top-down approach in complete html dom
+
+child : all child nodes of current node
+
+Example:
+
+<html>
+	<div id=a1>
+		<div id=a2>
+			<div id=a3>
+				First text
+			</div>
+			<div id=a4>
+				Second text
+			</div>
+		</div>
+	</div>
+	<span>
+		<div>
+			<div>
+				Third text
+			</div>
+		</div>
+	</span>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------
+/following : go to first-level following node, then all following nodes recursively
+//following : go to next child node, then all following nodes recursively
+
+
+-----
+/child : all first-level child nodes
+//child : all child nodes recursively
+
