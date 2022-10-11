@@ -1,0 +1,76 @@
+Closest coordinates
+===================
+
+center (0,0)
+x= 0
+y = 0
+
+1. Store in a list of arrays
+2. Create a sorted map of list of arrays
+	key : value
+	6 : {-2, 4}, {6, 0}
+	2 : {0, -2}
+
+3. Iterate throuhg list -> Get absolute distance -> Store
+
+4. Customize your code based on requirement
+
+Code
+===============================
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+public class ClosestCoordinate {
+
+    static int centerX = 0;
+    static int centerY = 0;
+
+    public static void main(String[] args) {
+        ArrayList<Integer[]> listOfArr = new ArrayList<>();
+        listOfArr.add(new Integer[]{-2, 4}); // 2+4=6
+        listOfArr.add(new Integer[]{0, -2}); // 2
+        listOfArr.add(new Integer[]{-1, 0}); // 1
+        // listOfArr.add(new Integer[]{3, 5});
+        listOfArr.add(new Integer[]{-2, -3}); // 5
+        listOfArr.add(new Integer[]{3, 2}); // 5
+        listOfArr.add(new Integer[]{2, 3}); // 5
+        // System.out.println(listOfArr);
+
+        // for (int i = 0; i < listOfArr.size(); i++) {
+        //     System.out.println(Arrays.toString(listOfArr.get(i)));
+        // }
+
+        SortedMap<Integer, ArrayList<Integer[]>> mapOfArr = new TreeMap<>();
+
+        for (int i = 0; i < listOfArr.size(); i++) {
+            Integer[] eachArr = listOfArr.get(i);
+            ArrayList<Integer[]> listOfArrTemp = new ArrayList<>();
+            listOfArrTemp.add(eachArr);
+            int sum = (Math.abs(eachArr[0]) - centerX) + Math.abs(eachArr[1]) - centerY;
+
+            if (mapOfArr.containsKey(sum)) {
+                mapOfArr.get(sum).add(eachArr);
+            } else {
+                mapOfArr.put(sum, listOfArrTemp);
+            }
+        }
+
+        System.out.println(mapOfArr);
+
+        Object[] distanceKeys = mapOfArr.keySet().toArray();
+        System.out.println(Arrays.toString(distanceKeys));
+
+        System.out.println("-------------------");
+
+        // Find 3rd closest coordinates
+        int input = 2;
+        ArrayList<Integer[]> listOfArr1 = mapOfArr.get(distanceKeys[input - 1]);
+        for (int i = 0; i < listOfArr1.size(); i++) {
+            System.out.println(Arrays.toString(listOfArr1.get(i)));
+        }
+    }
+
+}

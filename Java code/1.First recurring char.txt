@@ -1,0 +1,50 @@
+First recurring char
+====================
+
+1. First char which re-occured
+2. First re-occured char
+
+		
+ABCBDA	A 	 B
+ABC     null null
+ABCAB   A    A
+BCDDB   B    D
+
+
+B CDDB - B
+C B DB - B
+
+BCDDB
+
+
+Code
+==============================
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class RecurringChar {
+
+    public static void main(String[] args) {
+        String str = "ABCAB"; // B  D
+        int len = str.length();
+
+        // for (int i = 0; i < len; i++) {
+        //     if (str.substring(i + 1, len).contains(str.substring(i, i + 1))) {
+        //         System.out.println("1. First char which re-occured is " + str.substring(i, i + 1));
+        //         break;
+        //     }
+        // }
+
+        Set<String> charSet = new HashSet<>();
+        for (int i = 0; i < len; i++) {
+            boolean isAdded = charSet.add(str.substring(i, i + 1));
+            if (!isAdded) {
+                System.out.println("2. First re-occured char is " + str.substring(i, i + 1));
+                break;
+            }
+        }
+
+    }
+
+}
